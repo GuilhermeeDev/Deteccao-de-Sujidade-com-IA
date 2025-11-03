@@ -1,19 +1,33 @@
-# Aplicação de detectão de sujeira em imagens de painéis solares utilizando CNN's.
-Este repositório contém uma aplicação desenvolvida para detectar sujeira em imagens de painéis solares utilizando Redes Neurais Convolucionais (CNN's). A presença de sujeira pode reduzir significativamente a eficiência dos painéis solares, e a detecção automática pode ajudar na manutenção e limpeza eficaz.
+## Detecção de Sujeira em Imagens de Painéis Solares com CNNs
+
+Este repositório contém uma aplicação desenvolvida em **Python** para detectar sujeira em imagens de painéis solares utilizando **Redes Neurais Convolucionais (CNNs)**.  
+A presença de sujeira pode reduzir significativamente a eficiência dos painéis, e a detecção automática auxilia na **manutenção preventiva e limpeza eficiente**.
+
+---
 
 ## Estrutura do Projeto
+
 O projeto é organizado da seguinte forma:
 
-- `api_client.py`: Cliente API para comunicação com o servidor de inferência.
-- `api_inference.py`: Servidor API para realizar a inferência das imagens.
-- `models/`: Diretório contendo os modelos treinados.
-- `scripts/`: Scripts auxiliares para o usuario.
+- **`api_client.py`** → Cliente responsável por enviar imagens e receber resultados do servidor de inferência.  
+- **`api_inference.py`** → Servidor API responsável por processar as imagens e retornar o resultado da inferência.  
+- **`models/`** → Diretório contendo os modelos de CNN treinados.  
+- **`scripts/`** → Scripts auxiliares para automação de tarefas (ex: limpeza de cache, inicialização, etc).
+
+---
 
 ## Como Executar
-Para executar a aplicação, utilize os seguintes comandos ou execute o script `iniciar_aplicacao.bash` localizado na pasta `scripts/`:
+
+Para executar a aplicação, você pode usar diretamente os comandos abaixo **ou** rodar o script `iniciar_aplicacao.bash` localizado em `scripts/`:
 
 ```bash
+# Inicia o cliente (porta 8000)
 python -m uvicorn api_client:app --port 8000 --reload
+
+# Inicia o servidor de inferência (porta 8001)
 python -m uvicorn api_inference:app --port 8001 --reload
+
+# Limpa cache da aplicação (opcional)
 ./scripts/cleanerCache.bash ~/Apps/@Codando/@Projetos/Placas-Solares
+
 ```
