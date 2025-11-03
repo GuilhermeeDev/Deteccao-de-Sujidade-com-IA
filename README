@@ -1,6 +1,19 @@
+# Aplicação de detectão de sujeira em imagens de painéis solares utilizando CNN's.
+Este repositório contém uma aplicação desenvolvida para detectar sujeira em imagens de painéis solares utilizando Redes Neurais Convolucionais (CNN's). A presença de sujeira pode reduzir significativamente a eficiência dos painéis solares, e a detecção automática pode ajudar na manutenção e limpeza eficaz.
+
+## Estrutura do Projeto
+O projeto é organizado da seguinte forma:
+
+- `api_client.py`: Cliente API para comunicação com o servidor de inferência.
+- `api_inference.py`: Servidor API para realizar a inferência das imagens.
+- `models/`: Diretório contendo os modelos treinados.
+- `scripts/`: Scripts auxiliares para o usuario.
+
+## Como Executar
+Para executar a aplicação, utilize os seguintes comandos ou execute o script `iniciar_aplicacao.bash` localizado na pasta `scripts/`:
+
+```bash
 python -m uvicorn api_client:app --port 8000 --reload
-
 python -m uvicorn api_inference:app --port 8001 --reload
-
 ./scripts/cleanerCache.bash ~/Apps/@Codando/@Projetos/Placas-Solares
-
+```
